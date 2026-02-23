@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST">
+{% for q in questions %}
+    <p>{{ q.question_text }}</p>
+    <input type="radio" name="{{ q.id }}" value="option1"> {{ q.option1 }}<br>
+    <input type="radio" name="{{ q.id }}" value="option2"> {{ q.option2 }}<br>
+    <input type="radio" name="{{ q.id }}" value="option3"> {{ q.option3 }}<br>
+    <input type="radio" name="{{ q.id }}" value="option4"> {{ q.option4 }}<br>
+{% endfor %}
+<button type="submit">Submit</button>
+</form>
+{% endblock %}
